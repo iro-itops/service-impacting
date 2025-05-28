@@ -1,16 +1,26 @@
+
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f8;
   margin: 0;
   padding: 0;
 }
 
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
 .incident-report {
-  width: 80%;
-  margin: 20px auto;
-  padding: 20px;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 800px;
+  margin: 20px;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 h1, h2 {
@@ -18,13 +28,13 @@ h1, h2 {
   color: #2c3e50;
 }
 
-form {
-  margin-bottom: 20px;
+.form-group {
+  margin-bottom: 15px;
 }
 
 label {
   display: block;
-  margin: 10px 0 5px;
+  margin-bottom: 5px;
   font-weight: bold;
   color: #34495e;
 }
@@ -32,44 +42,71 @@ label {
 input, textarea {
   width: 100%;
   padding: 10px;
-  margin-bottom: 10px;
   border: 1px solid #ddd;
   border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+textarea.autogrow {
+  resize: none;
+  overflow-y: hidden;
+  transition: height 0.2s ease;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
 }
 
 button {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  background-color: #4CAF50;
-  color: white;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  padding: 10px 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
   cursor: pointer;
-  margin-bottom: 10px;
+  transition: background-color 0.3s ease;
 }
 
-button:hover {
-  background-color: #45a049;
+button[type="button"] {
+  background-color: #3498db;
+  color: white;
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-  table-layout: auto;
+button[type="button"]:hover {
+  background-color: #2980b9;
 }
 
-th, td {
-  padding: 10px;
+button[type="reset"] {
+  background-color: #e74c3c;
+  color: white;
+}
+
+button[type="reset"]:hover {
+  background-color: #c0392b;
+}
+
+#report-output {
+  margin-top: 40px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
   border: 1px solid #ddd;
 }
 
-th {
-  background-color: #f2f2f2;
-  text-align: left;
-}
-
-td {
-  border: 1px solid #000;
-  word-wrap: break-word;
+#report-content {
+  white-space: pre-wrap;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  background-color: #fff;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
 }

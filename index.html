@@ -3,60 +3,63 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Incident Report</title>
-  <link rel="stylesheet" href="styles 1.css">
+  <title>IT Service Impacting Automation Template</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="incident-report">
-    <h1>🛠️ <strong>IT Service Impacting Report Generator</strong></h1>
-    <form id="incident-form">
-      <label for="incident-number"><strong>Incident Number:</strong></label>
-      <input type="text" id="incident-number" name="incident-number" required>
+  <div class="container">
+    <div class="incident-report">
+      <h1>🛠️ <strong>IT Service Impacting Report Generator</strong></h1>
+      <form id="incident-form">
+        <div class="form-group">
+          <label for="incident-number">Incident Number:</label>
+          <input type="text" id="incident-number" required>
+        </div>
+        <div class="form-group">
+          <label for="description">Description:</label>
+          <input type="text" id="description" required>
+        </div>
+        <div class="form-group">
+          <label for="time-reported">Time Reported:</label>
+          <input type="datetime-local" id="time-reported" required>
+        </div>
+        <div class="form-group">
+          <label for="service-impact">Service Impact:</label>
+          <input type="text" id="service-impact" required>
+        </div>
+        <div class="form-group">
+          <label for="actions-taken">Actions Taken:</label>
+          <textarea id="actions-taken" class="autogrow" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="time-resolved">Time Resolved:</label>
+          <input type="datetime-local" id="time-resolved" required>
+        </div>
+        <div class="form-group">
+          <label for="duration">Duration of Incident:</label>
+          <input type="text" id="duration" required>
+        </div>
+        <div class="form-group">
+          <label for="resolution">Resolution:</label>
+          <textarea id="resolution" class="autogrow" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="rca">RCA:</label>
+          <input type="text" id="rca">
+        </div>
+        <div class="form-buttons">
+          <button type="button" onclick="generateReport()">Generate Report</button>
+          <button type="reset" onclick="confirmReset()">Reset</button>
+        </div>
+      </form>
 
-      <label for="description"><strong>Description:</strong></label>
-      <input type="text" id="description" name="description" required>
-
-      <label for="time-reported"><strong>Time Reported:</strong></label>
-      <input type="datetime-local" id="time-reported" name="time-reported" required>
-
-      <label for="service-impact"><strong>Service Impact:</strong></label>
-      <input type="text" id="service-impact" name="service-impact" required>
-
-      <label for="actions-taken"><strong>Actions Taken:</strong></label>
-      <textarea id="actions-taken" name="actions-taken" required></textarea>
-
-      <label for="time-resolved"><strong>Time Resolved:</strong></label>
-      <input type="datetime-local" id="time-resolved" name="time-resolved" required>
-
-      <label for="duration"><strong>Duration of Incident:</strong></label>
-      <input type="text" id="duration" name="duration" required>
-
-      <label for="resolution"><strong>Resolution:</strong></label>
-      <input type="text" id="resolution" name="resolution">
-
-      <label for="rca"><strong>RCA:</strong></label>
-      <input type="text" id="rca" name="rca">
-
-      <button type="button" onclick="generateReport()">Generate Report</button>
-      <button type="reset" onclick="confirmReset()">Reset</button>
-    </form>
-
-    <div id="report-output" style="display:none;">
-      <h2>📄 <strong>Generated Report</strong></h2>
-      <table id="report-table">
-        <tr><th><strong>Incident:</strong></th><td id="output-incident-number"></td></tr>
-        <tr><th><strong>Description:</strong></th><td id="output-description"></td></tr>
-        <tr><th><strong>Time Reported:</strong></th><td id="output-time-reported"></td></tr>
-        <tr><th><strong>Service Impact:</strong></th><td id="output-service-impact"></td></tr>
-        <tr><th><strong>Actions Taken:</strong></th><td id="output-actions-taken"></td></tr>
-        <tr><th><strong>Time Resolved:</strong></th><td id="output-time-resolved"></td></tr>
-        <tr><th><strong>Duration of Incident:</strong></th><td id="output-duration"></td></tr>
-        <tr><th><strong>Resolution:</strong></th><td id="output-resolution"></td></tr>
-        <tr><th><strong>RCA:</strong></th><td id="output-rca"></td></tr>
-      </table>
-      <button type="button" onclick="copyReport()">Copy Report</button>
+      <div id="report-output" style="display:none;">
+        <h2>📄 <strong>Generated Report</strong></h2>
+        <pre id="report-content"></pre>
+        <button type="button" onclick="copyReport()">Copy Report</button>
+      </div>
     </div>
   </div>
-  <script src="script 1.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
